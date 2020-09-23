@@ -1,0 +1,24 @@
+Visual Ace Window File
+New Window Window1
+	Width 305
+	Height 225
+	Text Window1
+  New Button Button1
+	Text Message Box
+	Left 7
+	Top 53
+	Width 79
+	Height 21
+  End Button
+  New Textbox txtMsg
+	Text Enter Message
+	Left 11
+	Top 19
+	Width 274
+	Height 18
+  End Textbox
+End Window1
+!code!!proc ^Button1_Click()
+Msgbox(%Me.txtMsg.text)
+end!
+

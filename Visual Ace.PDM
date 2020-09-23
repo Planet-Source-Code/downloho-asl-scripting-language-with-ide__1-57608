@@ -1,0 +1,140 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\windows\desktop\Visual Ace Setup
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace Resizable.dat=
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace.dat=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\comdlg32.ocx=
+C:\WINDOWS\SYSTEM\RICHTX32.OCX=
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=
+
+[Package|Standard Setup Package 1|Files Added]
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\ace resizable.dat=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\ace.dat=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\code.brw=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\program.ico=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\project.ico=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\script.ico=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\test.vas=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\window.ico=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\templates\resizable window.vpr=
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\templates\resizable.vaw=
+
+[Package|Standard Setup Package 1|Files Removed]
+c:\program files\microsoft visual studio\vb98\odds and ends\aio script editor\new\res\test.vas=
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\VisualAce.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\RICHTX32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\WINDOWS\SYSTEM\comdlg32.ocx=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace Resizable.dat=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace.dat=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\code.brw=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\program.ico=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\project.ico=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\script.ico=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Test.vas=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\window.ico=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\Templates\Resizable Window.vpr=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\Templates\Resizable.vaw=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\VisualAce.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\comdlg32.ocx=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace Resizable.dat=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace.dat=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\code.brw=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\program.ico=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\project.ico=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\script.ico=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\window.ico=$(AppPath)\res
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\Templates\Resizable Window.vpr=$(AppPath)\Templates
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\Templates\Resizable.vaw=$(AppPath)\Templates
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\VisualAce.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace Resizable.dat=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\Ace.dat=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\code.brw=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\program.ico=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\project.ico=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\script.ico=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\res\window.ico=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\Templates\Resizable Window.vpr=No
+C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New\Templates\Resizable.vaw=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=Visual Ace
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=Visual Ace
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|Visual Ace]
+Icon1=VisualAce.exe
+Title1=Visual Ace
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\windows\desktop\Visual Ace Setup
+ProjectFolder=C:\Program Files\Microsoft Visual Studio\VB98\Odds And Ends\Aio Script Editor\New
+ServerSideCab=
+File1=C:\windows\desktop\Visual Ace Setup\setup.exe
+File2=C:\windows\desktop\Visual Ace Setup\Setup.Lst
+File3=C:\windows\desktop\Visual Ace Setup\VisualAce.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

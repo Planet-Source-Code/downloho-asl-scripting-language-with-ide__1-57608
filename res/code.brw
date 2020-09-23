@@ -1,0 +1,839 @@
+System:cr;
+cr();
+returns carriage return(chr(13));
+msgbox("hello" & cr() & "world");
+lf,crlf;
+System:lf;
+lf();
+returns line feed(chr(10));
+msgbox("hello" & lf() & "world");
+cr,crlf;
+System:crlf;
+crlf();
+returns carriage return and line feed(chr(13) && chr(10));
+msgbox("hello" & crlf() & "world");
+cr,lf;
+String:substr;
+substr(string, int start, int length) or substr(string, int start);
+returns requested portion of string;
+var $s="hello"
+msgbox(substr($s,1,2))
+
+Or
+
+msgbox(substr($s,2));
+Variables;
+System:msgbox;
+msgbox(string, int icon, string);
+displays popup window alert;
+msgbox("hello world", , "Message Box Example")
+
+Or
+
+var $s=0
+$s=msgbox("hello world", 1, "Message Box Example")
+msgbox($s);
+;
+System:elseif;
+elseif(condition);
+if conditions is met process continues;
+var $s=1
+if($s=0)
+ msgbox("$s equals 0")
+elseif($s=1)
+ msgbox("$s equals 1")
+ break\sc
+else()
+ msgbox("$s does not equal 1 or 0")
+endif();
+if,else,endif,break;
+System:if;
+if(condition);
+if conditions is met process continues;
+var $s=0
+if($s=0)
+ msgbox("$s equals 0")
+else()
+ msgbox("$s does not equal 0")
+endif()
+
+OR
+
+var $s=0, $r=1
+if($s=0 && $r=0)
+ msgbox("$s and $r equal 0")
+else()
+ msgbox("$s and $r do not equal 0")
+endif()
+
+OR
+
+var $s=0, $r=1
+if($s=0 || $r=1)
+ msgbox("either $s equals 0 or $r equals 1")
+else()
+ msgbox("$s does not equal 0 and $r does not equal 1")
+endif()
+
+OR
+
+var $s=1
+if($s)
+ msgbox("$s does not equal 0")
+endif()
+
+OR
+
+var $s=0
+if(!$s)
+ msgbox("$s equals 0")
+endif();
+else,endif,ife,iif;
+System:else;
+else();
+if condition is not met proceed to code under else;
+var $s=0
+if($s=0)
+ msgbox(0)
+else()
+ msgbox($s)
+endif();
+if,endif;
+System:endif;
+endif();
+required for if() statement;
+var $s=0
+if($s=0)
+ msgbox(0)
+else()
+ msgbox($s)
+endif();
+if,else;
+System:Variables;
+Variables;
+variable strings and integers;
+var $s="", $i=0
+$s="hello world" //string
+
+msgbox($s{1}) //returns chr at position
+msgbox($s{1>2}) //acts as substr
+
+msgbox(>>"Why $s, how are you?") //replacement of variables in string
+
+$s.=", I like you." //$s equals $s and string
+msgbox($s)
+
+set $d=$s //sets $d to $s
+
+$d="goodbye cruel world" //any modification to $d
+
+msgbox($s) //will result in the modification of $s
+
+$i=32 //integer
+$i++ //$i plus one
+$i-- //$i minus one
+
+$i+=2 //$i plus integer
+$i-=2 //$i minus integer
+$i*=2 //$i multiplied by integer
+$i/=2 //$i divided by integer;
+var,Arrays,Types;
+System:Arrays;
+Arrays;
+System array handles;
+var $arr[10]="" //creates 11 instances of $arr 0 - 10
+
+OR
+
+$arr["hello"] = "world" //arrays are not limited to numbers
+msgbox($arr["hello"]);
+count,in_array,clear_array,implode,split;
+Array:count;
+count(array);
+returns count of array items;
+var $arr[10]="hello"
+msgbox(count($arr));
+arrays,in_array,clear_array,implode,split;
+File:appendfile;
+appendfile(file path, string);
+opens and appends string to file;
+var $a="Hello", $b=" World"
+
+writefile("C:\windows\desktop\test.txt", $a)
+appendfile("C:\windows\desktop\test.txt", $b);
+writefile,openfile,deletefile;
+System:beep;
+beep();
+generates a beeping sound;
+beep();
+;
+System:exec;
+exec(code);
+executes a string as though it was code;
+exec("msgbox(" & chr(34) & "hello" & chr(34) & ")");
+;
+System:eval;
+eval(code);
+evaluates provided conditon and returns True or False;
+var $s=1,$r=0
+
+msgbox(eval($s == 1))
+
+msgbox(eval($s != 1))
+
+msgbox(eval($s >= 1))
+
+msgbox(eval($s <= 1))
+
+msgbox(eval($s < 1))
+
+msgbox(eval($s > 1))
+
+msgbox(eval($s))
+
+msgbox(eval(!$s));
+;
+System:getrefbytype;
+getrefbytype(variable name, second variable);
+gets and sets a reference variable to a provide type;
+getrefbytype("$s", "$d");
+Variables,Types,setref,getref,getrefbytype;
+System:setrefbytype;
+setrefbytype(variable name, second variable);
+sets a reference variable to a provide type;
+setrefbytype("$s", "$d");
+Variables,Types,setref,getref,setrefbytype;
+System:setref;
+setref(variable name, variable value, function);
+sets a reference variable;
+!proc testA(>$s)
+ setref($s, "hello world", $_)
+end!
+
+!proc test()
+var $d="hello"
+&testA($d)
+msgbox($d)
+end!;
+variables,setrefbytype,getref;
+System:sendkeys;
+sendkeys(keys string, [optional wait integer]);
+send key strokes to screen;
+sendkeys("hello");
+;
+System:exitloop;
+exitloop(id);
+exit current while/loop;
+var $i=0
+
+while($i<=10, *,$i++)
+ if($i>=5)
+  exitloop(*)
+ endif()
+loop(*);
+while,loop;
+System:goto;
+goto(where);
+skips code until desired line is found;
+goto(1)
+
+msgbox("hello")
+
+1;
+;
+Object:hidewin;
+hidewin(winname);
+hides window from view;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+showwin("Window1")
+pause(2)
+hidewin("Window1");
+showwin,newwindow,objects;
+Array:split;
+split(array, string, delimeter);
+splits string into array and returns count when used as ref;
+var $s="h e l l o"
+
+split($arr, $s, " ")
+
+msgbox($arr[0])
+
+OR
+var $i=0
+$i = split($arr, $s, " ")
+
+msgbox($i)
+;
+arrays,implode,count;
+System:pause;
+pause(interval);
+pause app for given amount in seconds.;
+msgbox(time())
+pause(2)
+msgbox(time());
+;
+Array:clear_array;
+clear_array(variable);
+deletes all instances of an array;
+var $arr[2]="hello"
+
+msgbox(count($arr))
+clear_array($arr)
+msgbox(count($arr));
+arrays,count;
+System:shell;
+shell(path);
+run an executable;
+shell("c:\windows\telnet.exe");
+;
+System:switch;
+switch(case);
+execute code depending on case;
+var $i=0
+switch($i)
+ case(0)
+  msgbox(0)
+ case(1)
+  msgbox(1)
+ caseelse()
+  msgbox($i)
+endswitch();
+case,caseelse,endswitch;
+System:caseelse;
+caseelse();
+part of switch();
+var $i=0
+switch($i)
+ case(0)
+  msgbox(0)
+ case(1)
+  msgbox(1)
+ caseelse()
+  msgbox($i)
+endswitch();
+switch,case,endswitch;
+System:case;
+case(variable);
+part of switch();
+var $i=0
+switch($i)
+ case(0)
+  msgbox(0)
+ case(1)
+  msgbox(1)
+ caseelse()
+  msgbox($i)
+endswitch();
+switch,caseelse,endswitch;
+System:endswitch;
+endswitch();
+part of switch();
+var $i=0
+switch($i)
+ case(0)
+  msgbox(0)
+ case(1)
+  msgbox(1)
+ caseelse()
+  msgbox($i)
+endswitch();
+switch,caseelse,case;
+System:while;
+while(statement,id,[optional variable]);
+loop while condtion is met;
+var $i=0
+
+while($i<10, *, $i++)
+ msgbox($i)
+loop(*);
+exitloop,loop;
+System:loop;
+loop(id, [optional variable]);
+part of while/loop statment;
+var $i=0
+
+while($i<10, *, $i++)
+ msgbox($i)
+loop(*);
+exitloop,while;
+System:killvar;
+killvar(var name);
+removes variable from memory;
+var $s="hello"
+
+msgbox($s)
+killvar($s)
+msgbox($s);
+killall;
+System:killall;
+killall();
+removes all variables within a function from memory;
+var $s="hello"
+
+msgbox($s)
+killall($s)
+msgbox($s);
+killvar;
+Object:newbutton;
+newbutton(winname,control name,left int,top int,width int,height int);
+creates a button on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newbutton("Window1", "Button1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newcheck;
+newcheck(winname,control name,left int,top int,width int,height int);
+creates a checkbox on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newcheck("Window1", "CheckBox1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newcombo;
+newcombo(winname,control name,left int,top int,width int);
+creates a combobox on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newcombo("Window1", "Combo1", 0,0,50)
+showwin("Window1");
+newwindow,objects;
+Object:newdrivebox;
+newdrivebox(winname,control name,left int,top int,width int);
+creates a drivebox on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newdrivebox("Window1", "DriveBox1", 0,0,50)
+showwin("Window1");
+newwindow,objects;
+Object:newimage;
+newimage(winname,control name,left int,top int,width int,height int);
+creates a image on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newimage("Window1", "Image1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newlabel;
+newlabel(winname,control name,left int,top int);
+creates a label on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newlabel("Window1", "Label1", 0,0)
+showwin("Window1");
+newwindow,objects;
+Object:newlabela;
+newlabela(winname,control name,left int,top int,width int,height int);
+creates a label on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newlabela("Window1", "Label1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newlist;
+newlist(winname,control name,left int,top int,width int,height int);
+creates a list on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newlist("Window1", "ListBox1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newfilelist;
+newfilelist(winname,control name,left int,top int,width int,height int);
+creates a filelist box on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newfilelist("Window1", "FileList1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newdirlist;
+newdirlist(winname,control name,left int,top int,width int,height int);
+creates a directory list box on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newdirlist("Window1", "Dir1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newmemo;
+newmemo(winname,control name,left int,top int,width int,height int);
+creates a multi-line textbox on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newmemo("Window1", "Memo1", 0,0,50,50)
+showwin("Window1");
+newwindow,objects;
+Object:newmenu;
+newmenu(winname,control name, caption);
+creates a menu on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newmenu("Window1", "Menu1")
+showwin("Window1");
+newwindow,objects;
+Object:newsubmenu;
+newsubmenu(winname,control name, caption);
+creates a submenu on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newsubmenu("Window1", "SubMenu1")
+showwin("Window1");
+newwindow,objects;
+Object:newoption;
+newoption(winname,control name,left int,top int,width int,height int);
+creates a radio button on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newoption("Window1", "Option1", 0, 0, 50, 50)
+showwin("Window1");
+newwindow,objects;
+Object:newtimer;
+newtimer(winname,control name);
+creates a timer on provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newtimer("Window1", "Timer1")
+showwin("Window1");
+newwindow,objects;
+Object:newwindow;
+newwindow(winname,caption string,left int,top int,width int,height int);
+creates a new window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+
+showwin("Window1");
+objects;
+Object:newcontrol;
+newcontrol(winname,inactive object, control name string,left int,top int,width int,height int);
+creates a new InActive Control on the provided window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+newcontrol("Window1", "commondialog", "CD", 0, 0, 50, 50)
+showwin("Window1");
+newwindow,objects;
+System:return;
+return(string);
+returns a value from, and exits, a function;
+return("hello world");
+;
+Object:showwin;
+showwin(winname);
+shows a created window;
+newwindow("Window1", "Window1", 0, 0, 100, 100)
+showwin("Window1");
+newwindow,objects,hidewin;
+File:writefile;
+writefile(file path, string);
+creates a new file with the string provided;
+writefile("C:\windows\desktop\test.txt", "Hello World");
+appendfile,deletefile,openfile;
+String:asc;
+asc(string);
+returns ascii value of of first chr in string;
+var $s="h"
+msgbox(asc($s))
+;
+chr;
+String:chr;
+chr(int);
+returns chr value of integer;
+var $s="h"
+msgbox(chr(asc($s)))
+;
+asc;
+System:getref;
+getref(variable name, function);
+returns value of variable from another function;
+getref("$s", "WinMain")
+;
+setref,setrefbytype;
+String:strdel;
+strdel(var,start,len);
+returns string supplied without the string between start and len;
+var $s="hello"
+
+msgbox(strdel($s, 2, 2));
+strpos,strposrev,strlen,strins;
+String:hex;
+hex(int);
+returns hex value of integer;
+msgbox(hex(32));
+;
+String:iif;
+iif(condition, true, false);
+returns string based on condition;
+var $s="hello"
+
+msgbox(iif($s=="hello", "$s does equal hello", "$s does not equal hello"));
+if,else,endif;
+Array:implode;
+implode(array, delimeter);
+returns string from array seperated by delimeter;
+var $s="h e l l o"
+split($arr, $s, " ")
+
+msgbox(implode($arr, "_"));
+split,in_array,count,clear_array;
+Array:in_array;
+in_array(array, string, [optional case_sensitive boolean]);
+returns true or false if string is in array;
+var $s="h e l l o"
+split($arr, $s, " ")
+
+msgbox(in_array($arr,"h"))
+
+Or
+
+msgbox(in_array($arr,"H", true));
+split,implode,count,clear_array;
+String:strins;
+strins(string,instring,start);
+returns string with inserted instring;
+var $s="heo"
+
+msgbox(strins($s,"llo",2));
+strdel,substr,strpos,strposrev,strlen;
+String:int;
+int(string or single);
+returns a number rounded;
+var $i="1.2"
+
+msgbox(int($i));
+math;
+String:strlen;
+strlen(string);
+returns length of string;
+var $s="hello"
+
+msgbox(strlen($s));
+variables;
+System:math;
+math(equation);
+returns sum of supplied equation;
+msgbox(math(1 + 1 * 2))
+
+OR
+
+msgbox((1 + 1 * 2))
+
+//equation has strict formating rules, a white space is required between each math symbol;
+math symbols;
+File:openfile;
+openfile(file path);
+returns contents of file;
+writefile("C:\windows\desktop\test.txt", "Hello World")
+msgbox(openfile("C:\windows\desktop\test.txt"));
+writefile,appendfile,deletefile;
+System:prompt;
+prompt(prompt, title, default);
+displays and returns value of prompt;
+msgbox(prompt("How old are you?", "Age", 18));
+;
+String:replace;
+replace(string,find,replace with);
+returns string with supplied needle in haystick replaced;
+var $s="Hello"
+msgbox(replace($s, "o", "o World"));
+strdel,strins,replacea;
+String:replacea;
+replacea(string,find array,replace with array);
+returns string with supplied needle array in haystick array replaced;
+var $arr[2]="", $arrX[2]=""
+var $s="Hello"
+
+$arr[0]="l"
+$arr[1]="o"
+
+$arrX[0]="t"
+$arrX[1]="h"
+
+msgbox(replacea($s, $arr, $arrX));
+Arrays,replace;
+String:rgb;
+rgb(int, int, int);
+returns rgb value;
+msgbox(rgb(255,0,255));
+;
+String:rnd;
+rnd(int);
+returns random number;
+msgbox(rnd(255));
+;
+String:strreverse;
+strreverse(string);
+returns string reversed;
+msgbox(strreverse("hello"));
+;
+String:strpos;
+strpos(search str, search for str,start int);
+returns position of needle in haystack;
+msgbox(strpos("hello","e"))
+
+Or
+
+msgbox(strpos("hello everyone","e", 3));
+strposrev,strlen;
+String:strposrev;
+strposrev(search str, search for str,start int);
+returns position of needle in haystack reversed;
+msgbox(strposrev("hello","e"))
+
+Or
+
+msgbox(strposrev("hello everyone","e", 12));
+strpos,strlen;
+String:left;
+left(string, length int);
+returns left most string from length int;
+msgbox(left("hello",2));
+variables,strpos,strposrev,strlen,right,substr;
+String:right;
+right(string, length int);
+returns right most string from length int;
+msgbox(right("hello",2));
+variables,strpos,strposrev,strlen,left,substr;
+String:string;
+string(length,charachter);
+returns string populated by length chr ;
+msgbox(string("a", 10));
+;
+String:trim;
+trim(string);
+returns string with white spaces removed from beginning and end;
+msgbox(trim("    hello     "));
+replace;
+System:time;
+time(index);
+returns current system time;
+msgbox(time())
+
+or
+
+msgbox(time(1))
+
+or
+
+msgbox(time("h") & ":" & time("m") & ":" & time("s"));
+date;
+System:date;
+date(index);
+returns current system date;
+msgbox(date())
+
+or
+
+msgbox(date(1))
+
+or
+
+msgbox(date("m") & "/" & date("d") & "/" & date("y"));
+time;
+String:ucase;
+ucase(string);
+returns string in upper case;
+msgbox(ucase("hello"));
+lcase;
+String:lcase;
+lcase(string);
+returns string in lower case;
+msgbox(lcase("hello"));
+ucase;
+String:val;
+val(string);
+returns value of string;
+msgbox(val("&HFF"));
+;
+String:isnumeric;
+isnumeric(string);
+returns true or false if supplied string is number;
+msgbox(isnumeric("123"));
+;
+System:ife;
+ife(condition);
+if condition is met exit current procedure;
+var $s=0
+ife(!$s)
+msgbox("hello");
+if,iif;
+File:deletefile;
+deletefile(file path);
+deletes supplied file;
+writefile("C:\windows\desktop\test.txt", "")
+deletefile("C:\windows\desktop\test.txt");
+writefile,openfile,appendfile,copyfile,fileexist;
+System:with;
+with NLL Name { code };
+loads and executes code from NLL files;
+with kernel32 { $s=GetSystemDirectory() }
+msgbox($s);
+;
+File:copyfile;
+copyfile(file from, file to);
+copies supplied file;
+writefile("C:\windows\desktop\test.txt", "")
+copyfile("C:\windows\desktop\test.txt", "C:\windows\desktop\copy of test.txt");
+writefile,openfile,appendfile,deletefile,copyfile,fileexist;
+File:fileexist;
+fileexist(file path);
+returns true or false if file exists;
+msgbox(fileexist("C:\windows\desktop\test.txt"));
+writefile,openfile,appendfile,copyfile,deletefile;
+System:Math Symbols;
+Math Symbols;
+description of available symbols for math equations;
+msgbox((1 + 1)) //addition for simple integers
+msgbox((1.2 ++ 1.2)) //addition for singles and doubles
+msgbox((2 - 1)) //subtraction
+msgbox((2 * 2)) //multiplication
+msgbox((2 / 2)) //division
+msgbox((2 ^ 2)) //
+msgbox((7 Mod 2)) //returns remainder
+msgbox((1 And 1)) //usuage for And
+msgbox((1 Or 1)) //usuage for Or
+msgbox((1 XOr 1)) //usuage for XOr;
+math;
+System:Types;
+Types;
+User types for variables;
+!type RGB_COLOR
+ Red=0
+ Green=0
+ Blue=0
+ Color=0
+end!
+
+!proc Test()
+var $s::RGB_COLOR
+
+ msgbox($s.Red); 
+end!;
+Variables,setrefbytype;
+System:Identifiers;
+Identifiers;
+System Identifiers;
+$  -  Local variable
+@  -  Global variable
+&  -  User created procedures
+%  -  Object pointer
+#  -  InActive Control pointer
+>  -  By Reference in procedures
+>> -  Variable replacment in strings
+// -  Comments
+
+^  -  Local Window's Name(for ide only);
+Variables;
+System:code_string;
+code_string();
+Returns programs bare code;
+msgbox(code_string());
+code_string_add,code_string_rem,code_string_gen;
+System:code_string_add;
+code_string_add(code);
+Adds provided string to bare code;
+code_string_add(code_string_gen("Go","msgbox(" & chr(34) & "hello" & chr(34) & ")"))
+&Go();
+code_string,code_string_rem,code_string_gen;
+System:code_string_gen;
+code_string_gen(procedure name, code, [optional variables]);
+Generates procedure code;
+msgbox(code_string_gen("Test","msgbox(" & chr(34) & "hello" & chr(34) & ")"));
+code_string,code_string_rem,code_string_add;
+System:code_string_rem;
+code_string_rem(code);
+Removes specified procedure from bare code;
+msgbox(code_string())
+code_string_rem("test")
+msgbox(code_string())
+;
+code_string,code_string_add,code_string_gen;
+System:include;
+include [stored procedure name];
+Automatically adds procedures or types from stored code(for IDE only);
+;
+;
+System:html2rgb;
+html2rgb(color);
+Converts hex style colors to rgb;
+msgbox(html2rgb("#ff0000"));

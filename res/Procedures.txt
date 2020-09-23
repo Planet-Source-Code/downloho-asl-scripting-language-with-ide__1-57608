@@ -1,0 +1,80 @@
+Procedures are an important part of any programming language and simple to create with Visual Ace.
+
+Example:
+
+!proc Test()
+
+end!
+
+You can pass strings and other variables to procedures via it's arguments.
+
+Example:
+
+!proc Test($str)
+ msgbox($str)
+end!
+
+That will pop up an alert with the contents of the variable '$str'
+
+And to pass another variable to the procedure, called 'by reference':
+
+!proc Test(>$str)
+ msgbox($str)
+end!
+
+That will pop up an alert with the passed variable's name.
+
+Once a variable is passed by reference it's value can be retrieved and altered.
+
+!proc Test(>$str)
+ msgbox($str)
+end!
+
+And to alter the passed variable's value
+
+!proc Test(>$str)
+ $str = "hello"
+end!
+
+To get and set variables by type you must use special functions:
+getrefbytype and setrefbytype
+
+To pass a variables name to retrieved or altered by setref or getref, use:
+
+!proc Test(?$str)
+ msgbox($str)
+end!
+
+You can also set an arguments value upon execution with optional arguments.
+
+!proc Test($str="test")
+ msgbox($str)
+end!
+
+When the procedure is executed the variable '$str' will be assigned the value 'test' unless there is a value passed through it. If a value is passed the variable will be assigned that value.
+
+You can also specifically mark an argument as a Type.
+
+!proc Test($typ::TYPE_NAME)
+ msgbox($typ.type_value)
+end!
+
+To return a value from a procedure use the 'return' function.
+
+!proc Test()
+ return("hello")
+end!
+
+A special variable is reserved for all procedures '$_'. It contains the referring function's name.
+
+!proc Test()
+ msgbox($_)
+end!
+
+To simply execute a procedure:
+
+&Test()
+
+To assign a variable the results:
+
+$str=&Test()

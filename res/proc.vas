@@ -1,0 +1,67 @@
+!proc newSplit(>$Data, $sTxt, $Del)
+//new split function that ignores any instance of the delimiter
+//in between ()'s
+var $i=0, $k=0
+var $sA="", $t=0, $c=0
+ $Data[0]=""
+while($i<=strlen($sTxt), *, $i++)
+
+  $sA = $sTxt{$i}
+
+  if($sA = Chr(34))
+   $c = iif($c==0, 1, 0)
+  endif()
+
+  if($sA == "(" && $c == 0)
+    $t++
+  elseif($sA == ")" && $c == 0)
+    $t--
+    $t=iif($t <= 0, 0, $t)
+    break;
+  endif()
+
+  $sB=$sTxt{$i > strlen($Del)}
+
+    if($sB == $Del && $t == 0 && $c == 0)
+     $i += (strlen($Del) - 1)
+     $k++
+     $Data[$k]=""
+     setref($Data & "[" & ($k - 1) & "]", $Data[($k - 1)], $_)
+    else()
+     $Data[$k] .= $sA
+    endif()
+loop(*)
+
+ setref($Data & "[" & $k & "]", $Data[$k], $_)
+ return($k)
+end!
+!proc GetRGB(>$rgb_color)
+var $clr::RGB_COLOR
+
+ getrefbytype($clr, $rgb_color)
+
+ $clr.Blue = int(($clr.Color / 65536))
+ $clr.Green = Int((($clr.Color - (65536 * $clr.Blue)) / 256))
+ $clr.Red = ($clr.Color - (65536 * $clr.Blue + (256 * $clr.Green)))
+
+ setrefbytype($rgb_color, $clr)
+end!
+!proc SplitWithString(>$arr, $str, $d1, $d2)
+var $i=0, $b=-1
+
+$i = split($a, $str, $d2)
+while($b < $i, *, $b++)
+ $t=split($g, $a[$b], $d1)
+
+   setref($arr & "[" & $g[0] & "]", $g[1])
+
+loop(*)
+
+end!
+!type RGB_COLOR
+ Red=0
+ Green=0
+ Blue=0
+ Color=0
+end!
+
